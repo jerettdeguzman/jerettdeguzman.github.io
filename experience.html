@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Experience & Research — Jerett De Guzman</title>
+  <meta name="description" content="Rutgers IEEE VEX U Robotics (electrical, build, elevator design, quartermaster), Lead Bar Back at The Barrow House, and a literature review on AI in robotics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== Site header: same on every page (no ../ here because this file is at the top level) ===== -->
+  <header class="site-header">
+    <a class="site-name" href="index.html">Jerett De Guzman</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html#projects">Projects</a>
+      <a href="experience.html" aria-current="page">Experience</a>
+      <a href="resume.pdf">Résumé</a>
+      <a href="mailto:jerettdg@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/jerett-de-guzman">LinkedIn</a>
+      <a href="https://github.com/jerettdeguzman">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="kicker">
+      <span class="kicker-left">Experience &amp; Research</span>
+      <span class="kicker-right">2022 – Present</span>
+    </div>
+
+    <!-- ===== VEX U ===== -->
+    <section class="entry">
+      <div class="entry-head">
+        <h2>IEEE VEX U Robotics, Rutgers University</h2>
+        <span class="entry-date">Sept 2025 – Present</span>
+      </div>
+      <p class="entry-sub">Electrical &amp; Build Member · Quartermaster (E-Board)</p>
+
+      <div class="entry-split">
+        <div>
+          <ul>
+            <li>Wired and integrated 5 time-of-flight sensors, motors with onboard controllers, pneumatics, and power distribution, including the odometry system for autonomous routines.</li>
+            <li>Argued for an Orange Pi over LiDAR as the robot's vision platform, since it could read AprilTag fiducials and run object detection for autonomous positioning, while LiDAR only measures distance.</li>
+            <li>As quartermaster, maintain the drill press, bandsaw, miter saw, belt sander, and 3D printers, supervise machine use, and manage a $1,000 supply budget.</li>
+            <li>Collaborate with a 14-member team and document the build in the team's engineering notebook.</li>
+          </ul>
+
+          <h3 class="label">Elevator design</h3>
+          <ul>
+            <li>Built three versions of a 3-stage elevator toward a 50&nbsp;in target: metal C-channels (36&nbsp;in, too much metal-on-metal friction), then drawer slides (smooth ball bearings, but heavy, too wide, and capped at 28&nbsp;in; strung with a 3D-printed winch and motor-tested), then C-channels again with 3D-printed slide-rail inserts (30&nbsp;in, smooth).</li>
+            <li>Tested the inserts at three fillet radii (0.05, 0.1, 0.25&nbsp;in). The first two still let the C-channels catch on the corners; 0.25&nbsp;in let them funnel in cleanly.</li>
+            <li>Designed the 3D-printed parts in Onshape: pulleys, drawer-slide hardstops, C-channel guides, pillow-block hardstops, and four versions of the slide-rail insert, including full-length 21- and 24-hole variants.</li>
+            <li>The semester started before V3 was strung or motorized. The team went with a 4-stage elevator on JLC slides, which reached 40&nbsp;in.</li>
+          </ul>
+        </div>
+        <figure>
+          <div class="frame">
+            <img src="images/vex_elevator.webp" width="914" height="1316"
+                 alt="Three-stage elevator built from aluminum C-channels, mounted upright on a robot drivetrain on a workbench. Teal 3D-printed slide-rail inserts run along the inside of the channels.">
+          </div>
+          <figcaption>V3 on the drivetrain: three C-channel stages with my 3D-printed slide-rail inserts (teal). Built for cascade rigging, but never strung, so it never ran as a cascade.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== Bar back ===== -->
+    <section class="entry">
+      <div class="entry-head">
+        <h2>Lead Bar Back, The Barrow House</h2>
+        <span class="entry-date">Feb 2022 – Aug 2025</span>
+      </div>
+      <p class="entry-sub">Clifton, NJ · while studying full-time at PCCC</p>
+      <ul>
+        <li>Kept service running in a venue serving 150+ guests a night, often on back-to-back weekend doubles.</li>
+        <li>Trained 10+ new bar backs on food prep, service standards, cocktail batching, and garnish prep.</li>
+        <li>Oversaw $8,000+ of food and beverage inventory and coordinated weekly deliveries of 30+ boxes with 8+ managers.</li>
+      </ul>
+    </section>
+
+    <!-- ===== Research paper ===== -->
+    <section class="entry">
+      <div class="entry-head">
+        <h2>Research Paper: AI Within Robotics</h2>
+        <span class="entry-date">Nov 2024</span>
+      </div>
+      <p class="entry-sub">CIS 236, Computer Organization &amp; Architecture · PCCC</p>
+      <p>A literature review of six published sources on how AI, machine learning, and deep learning are built into robots across manufacturing, medical, agricultural, and aeronautical systems. It weighs the benefits against the hard limits, chiefly real-time performance, computing power, and safety, and reviews emerging areas like edge computing, swarm robotics, and computer vision.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Jerett De Guzman · Engineering Portfolio</span>
+    <a href="index.html#projects">Projects →</a>
+  </footer>
+
+</div>
+</body>
+</html>

@@ -181,6 +181,35 @@ figcaption {
 .body p  { margin: 0; }
 .body section + section { margin-top: 18px; }  /* space between stacked right-column blocks */
 
+/* ---------- 8b. Experience page entries ---------- */
+.entry { padding: 28px 0; }
+.entry + .entry { border-top: 1px solid var(--border); }  /* thin rule between entries */
+.entry:first-of-type { padding-top: 28px; }
+.entry-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 2px 24px;
+}
+.entry-head h2 { margin: 0; font-size: 22px; font-weight: 700; line-height: 1.2; }
+.entry-date { font-family: var(--font-mono); font-size: 13px; color: var(--text-muted); }
+.entry-sub { margin: 6px 0 12px; font-weight: 500; color: var(--accent); }
+.entry ul { margin: 0; padding-left: 20px; }
+.entry li { margin-bottom: 8px; }
+.entry p { margin: 0 0 8px; }
+.entry .label { margin-top: 18px; }
+/* Bullets on the left, a photo on the right (stacks on phones, see section 10) */
+.entry-split {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: var(--gutter);
+  align-items: start;
+}
+.entry-split figure { margin: 0; }
+.entry-split .frame { aspect-ratio: auto; }         /* photo keeps its own shape here */
+.entry-split .frame img { height: auto; }
+
 /* ---------- 9. Footer strip ---------- */
 .site-footer {
   display: flex;
@@ -205,5 +234,6 @@ figcaption {
   .kicker { margin-top: 28px; }
   h1 { font-size: 28px; }
   .metrics { grid-template-columns: repeat(2, 1fr); }
-  .figures, .body { grid-template-columns: 1fr; }
+  .figures, .body, .entry-split { grid-template-columns: 1fr; }
+  .entry-split figure { max-width: 320px; }
 }
