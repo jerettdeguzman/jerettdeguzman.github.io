@@ -209,6 +209,7 @@ figcaption {
 .entry-split figure { margin: 0; }
 .entry-split .frame { aspect-ratio: auto; }         /* photo keeps its own shape here */
 .entry-split .frame img { height: auto; }
+.entry-split + .entry-split { margin-top: 8px; }
 
 /* ---------- 8c. Home page ---------- */
 .home-name { font-size: 48px; margin-bottom: 6px; }
