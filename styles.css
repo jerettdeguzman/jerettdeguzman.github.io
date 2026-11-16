@@ -202,13 +202,67 @@ figcaption {
 /* Bullets on the left, a photo on the right (stacks on phones, see section 10) */
 .entry-split {
   display: grid;
-  grid-template-columns: 1fr 260px;
+  grid-template-columns: 1fr 230px;
   gap: var(--gutter);
   align-items: start;
 }
 .entry-split figure { margin: 0; }
 .entry-split .frame { aspect-ratio: auto; }         /* photo keeps its own shape here */
 .entry-split .frame img { height: auto; }
+
+/* ---------- 8c. Home page ---------- */
+.home-name { font-size: 48px; margin-bottom: 6px; }
+.headline { margin: 0 0 10px; font-size: 20px; font-weight: 500; color: var(--accent); }
+.contact-line {
+  display: flex; flex-wrap: wrap; gap: 4px 20px;
+  font-family: var(--font-mono); font-size: 13px;
+}
+.contact-line a { color: var(--text-muted); text-decoration: none; }
+.contact-line a:hover { color: var(--accent-hover); text-decoration: underline; }
+.home-section { margin-top: 40px; }
+.home-section > .label { margin-bottom: 12px; }
+.summary { margin: 0; font-size: 17px; line-height: 1.6; }
+
+/* Project list: one row per project, thumbnail left, text right.
+   To add a project, copy one <li class="project-card"> in index.html. */
+.project-list { list-style: none; margin: 0; padding: 0; }
+.project-card { border-top: 1px solid var(--border); }
+.project-card:last-child { border-bottom: 1px solid var(--border); }
+.project-card a {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 20px;
+  padding: 16px 0;
+  color: var(--text);
+  text-decoration: none;
+}
+.project-card .thumb {
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.project-card .thumb img { width: 100%; height: 100%; object-fit: cover; }
+.project-card .thumb.fit img { object-fit: contain; }
+.card-kicker {
+  display: block;
+  font-family: var(--font-mono); font-size: 12px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent);
+}
+.card-title { display: block; margin: 4px 0; font-size: 20px; font-weight: 700; line-height: 1.2; }
+.card-text { display: block; color: var(--text-secondary); }
+.project-card a:hover .card-title { color: var(--accent-hover); text-decoration: underline; }
+
+/* Core competencies and education: two columns of items */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 40px;
+}
+.comp { border-top: 1px solid var(--border); padding: 10px 0 12px; }
+.comp h3, .edu h3 { margin: 0 0 2px; font-size: 15px; font-weight: 600; }
+.comp p { margin: 0; color: var(--text-secondary); }
+.edu p { margin: 0 0 2px; color: var(--text-secondary); }
+.edu .mono { font-family: var(--font-mono); font-size: 13px; }
 
 /* ---------- 9. Footer strip ---------- */
 .site-footer {
@@ -236,4 +290,10 @@ figcaption {
   .metrics { grid-template-columns: repeat(2, 1fr); }
   .figures, .body, .entry-split { grid-template-columns: 1fr; }
   .entry-split figure { max-width: 320px; }
+  .home-name { font-size: 36px; }
+  .two-col { grid-template-columns: 1fr; }
+  .edu + .edu { margin-top: 20px; }
+  .project-card a { grid-template-columns: 96px 1fr; gap: 14px; }
+  .card-title { font-size: 17px; }
+  .card-text { font-size: 14px; }
 }

@@ -3,10 +3,162 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jerett De Guzman — Electrical & Computer Engineering</title>
+  <title>Jerett De Guzman — Electrical &amp; Computer Engineering</title>
+  <meta name="description" content="Engineering portfolio of Jerett De Guzman, Rutgers electrical and computer engineering student: robot trajectory design, feedback control, digital logic, and analog filters.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Jerett De Guzman</h1>
-  <p>Electrical &amp; computer engineering portfolio — full site coming soon.</p>
+<div class="page">
+
+  <!-- ===== Site header: same on every page (no ../ here because this file is at the top level) ===== -->
+  <header class="site-header">
+    <a class="site-name" href="index.html">Jerett De Guzman</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="#projects">Projects</a>
+      <a href="experience.html">Experience</a>
+      <a href="resume.pdf">Résumé</a>
+      <a href="mailto:jerettdg@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/jerett-de-guzman">LinkedIn</a>
+      <a href="https://github.com/jerettdeguzman">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="kicker">
+      <span class="kicker-left">Engineering Portfolio</span>
+      <span class="kicker-right">Electrical &amp; Computer Engineering</span>
+    </div>
+
+    <h1 class="home-name">Jerett De Guzman</h1>
+    <p class="headline">Electrical &amp; Computer Engineering Student · Rutgers University</p>
+    <div class="contact-line">
+      <a href="mailto:jerettdg@gmail.com">jerettdg@gmail.com</a>
+      <a href="https://www.linkedin.com/in/jerett-de-guzman">linkedin.com/in/jerett-de-guzman</a>
+      <a href="https://github.com/jerettdeguzman">github.com/jerettdeguzman</a>
+    </div>
+
+    <!-- ===== Summary ===== -->
+    <section class="home-section">
+      <h2 class="label">Summary</h2>
+      <p class="summary">I design, simulate, build, and debug circuits from start to finish, with a 4.0 GPA in Rutgers ECE. On the Rutgers VEX U robotics team, I wire sensors, motors, and power distribution, and I argued for an Orange Pi vision platform so the robot could read AprilTags. I'm working toward perception and computer vision, starting from the electrical side of the robot.</p>
+    </section>
+
+    <!-- ===== Projects =====
+         To add a project: copy one <li class="project-card"> ... </li> block,
+         paste it at the top of the list, and change the link, image, and text. -->
+    <section class="home-section" id="projects">
+      <h2 class="label">Projects</h2>
+      <ul class="project-list">
+
+        <li class="project-card">
+          <a href="projects/trajectory.html">
+            <span class="thumb fit"><img src="images/tr_path.png" width="1254" height="702" loading="lazy" alt=""></span>
+            <span>
+              <span class="card-kicker">Trajectory &amp; Motion Planning · Fall 2026</span>
+              <span class="card-title">Autonomous Mobile Robot Trajectory Design</span>
+              <span class="card-text">A 53.3&nbsp;m collision-free route through four sensing stops, built from step and ramp signals, inside a battery-limited mission.</span>
+            </span>
+          </a>
+        </li>
+
+        <li class="project-card">
+          <a href="projects/current-supply.html">
+            <span class="thumb"><img src="images/cs_photo.jpg" width="1000" height="750" loading="lazy" alt=""></span>
+            <span>
+              <span class="card-kicker">Power &amp; Feedback Control · Fall 2025</span>
+              <span class="card-title">7-Bit Constant Current Supply</span>
+              <span class="card-text">An Arduino-programmable current source held within ±0.25&nbsp;mA of its setpoint by closed-loop feedback.</span>
+            </span>
+          </a>
+        </li>
+
+        <li class="project-card">
+          <a href="projects/traffic-light.html">
+            <span class="thumb"><img src="images/tl_circuit.jpg" width="1000" height="750" loading="lazy" alt=""></span>
+            <span>
+              <span class="card-kicker">Digital Logic · Fall 2025</span>
+              <span class="card-title">Traffic Light State Machine</span>
+              <span class="card-text">A demand-driven traffic light from flip-flops and a 555 clock, debugged down to a bent ground pin.</span>
+            </span>
+          </a>
+        </li>
+
+        <li class="project-card">
+          <a href="projects/bandpass.html">
+            <span class="thumb"><img src="images/bp_morse.jpg" width="1000" height="750" loading="lazy" alt=""></span>
+            <span>
+              <span class="card-kicker">Analog Signal Processing · Spring 2026</span>
+              <span class="card-title">Two-Stage Active Bandpass Filter</span>
+              <span class="card-text">Two cascaded op-amp stages (Q = 15.55) pull one Morse code message at 351&nbsp;Hz out of twelve.</span>
+            </span>
+          </a>
+        </li>
+
+        <li class="project-card">
+          <a href="projects/crossover.html">
+            <span class="thumb fit"><img src="images/xo_combined.jpg" width="1000" height="492" loading="lazy" alt=""></span>
+            <span>
+              <span class="card-kicker">Filter Design &amp; Simulation · Spring 2026</span>
+              <span class="card-title">Three-Way Passive Crossover Network</span>
+              <span class="card-text">An individual simulation project: a critically damped LC crossover at 100&nbsp;Hz and 2.5&nbsp;kHz.</span>
+            </span>
+          </a>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ===== Core competencies ===== -->
+    <section class="home-section">
+      <h2 class="label">Core competencies</h2>
+      <div class="two-col">
+        <div class="comp"><h3>Circuit design &amp; analysis</h3><p>Active and passive filters, op-amp circuits, DACs, transfer functions, Bode analysis</p></div>
+        <div class="comp"><h3>Simulation &amp; design tools</h3><p>LTspice, MATLAB, KiCad, EasyEDA, Onshape, TinkerCAD</p></div>
+        <div class="comp"><h3>Lab, test &amp; fabrication</h3><p>Oscilloscopes, multimeters, function generators, logic probes, soldering, shop tools</p></div>
+        <div class="comp"><h3>Programming &amp; digital</h3><p>C++/C, Python, MATLAB, Java, Arduino, Verilog, Vivado, finite state machines</p></div>
+        <div class="comp"><h3>Systems &amp; robotics</h3><p>Sensor integration, motor and pneumatic wiring, power distribution, mechanism design</p></div>
+        <div class="comp"><h3>Working with people</h3><p>Technical writing, training new team members, lab safety and supervision</p></div>
+      </div>
+    </section>
+
+    <!-- ===== Education ===== -->
+    <section class="home-section">
+      <h2 class="label">Education</h2>
+      <div class="two-col">
+        <div class="edu">
+          <h3>Rutgers University, School of Engineering</h3>
+          <p>BS, Electrical &amp; Computer Engineering</p>
+          <p class="mono">GPA 4.00 · Expected May 2028</p>
+          <p>Dean's List (2x). Coursework: Linear Systems &amp; Signals; Computer Architecture &amp; Assembly Language (RISC-V); Digital Logic Design; Electronic Devices; Principles of EE I &amp; II.</p>
+        </div>
+        <div class="edu">
+          <h3>Passaic County Community College</h3>
+          <p>AS, Computer Science</p>
+          <p class="mono">GPA 3.75 · Sept 2022 – May 2025</p>
+          <p>Graduate Achievement Award (top of the CS major), Phi Theta Kappa, Dean's List (5x). Coursework: Data Structures; Computer Organization &amp; Architecture.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section class="home-section">
+      <h2 class="label">Contact</h2>
+      <div class="contact-line">
+        <a href="mailto:jerettdg@gmail.com">jerettdg@gmail.com</a>
+        <a href="https://www.linkedin.com/in/jerett-de-guzman">linkedin.com/in/jerett-de-guzman</a>
+        <a href="https://github.com/jerettdeguzman">github.com/jerettdeguzman</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>Jerett De Guzman · Engineering Portfolio</span>
+    <a href="experience.html">Experience →</a>
+  </footer>
+
+</div>
 </body>
 </html>
