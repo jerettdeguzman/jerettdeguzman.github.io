@@ -63,6 +63,11 @@ them, so one edit changes the whole site.
 2. **Page.** Copy an existing page, e.g. `projects/trajectory.html`, to
    `projects/pick-and-place.html`. Then edit, top to bottom:
    - `<title>` and `<meta name="description">`
+   - the link-preview block right below them (`og:title`, `og:description`,
+     `og:url`, `og:image`): copy the title and description, set the URL to the
+     new page's full address, and point the image at one of its images (use a
+     full `https://jerettdeguzman.github.io/images/...` address, and a .png or
+     .jpg, not .webp)
    - the kicker (`kicker-left` = category, `kicker-right` = term · course)
    - `<h1>` title, the `challenge` sentence, and the `tools` line
    - the four metric boxes (value + label)
