@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Traffic Light State Machine — Jerett De Guzman</title>
+  <meta name="description" content="Four-state traffic light controller built from D flip-flops, logic gates, and an LM555 clock, debugged down to a bent ground pin.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== Site header: same on every page (paths start with ../ because this file is in projects/) ===== -->
+  <header class="site-header">
+    <a class="site-name" href="../index.html">Jerett De Guzman</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../experience.html">Experience</a>
+      <a href="../resume.pdf">Résumé</a>
+      <a href="mailto:jerettdg@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/jerett-de-guzman">LinkedIn</a>
+      <a href="https://github.com/jerettdeguzman">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== 1. Kicker strip ===== -->
+    <div class="kicker">
+      <span class="kicker-left">Project · Digital Logic</span>
+      <span class="kicker-right">Fall 2025 · Digital Logic Design Lab</span>
+    </div>
+
+    <!-- ===== 2. Title + challenge ===== -->
+    <h1>Traffic Light State Machine</h1>
+    <p class="challenge">A demand-driven traffic light: the main road stays green until a pedestrian presses the crosswalk button, then the lights cycle every 4&nbsp;seconds.</p>
+
+    <!-- ===== 3. Four metric boxes ===== -->
+    <ul class="metrics">
+      <li><span class="metric-value">4 states</span><span class="metric-label">2 D flip-flops</span></li>
+      <li><span class="metric-value">≈3.95 s</span><span class="metric-label">LM555 clock period</span></li>
+      <li><span class="metric-value">D1 = Q1 ⊕ Q0</span><span class="metric-label">excitation equation</span></li>
+      <li><span class="metric-value">1 bent pin</span><span class="metric-label">root cause found</span></li>
+    </ul>
+
+    <!-- ===== 4. Two captioned images. Add class="fit" to a frame for diagrams so nothing is cropped. ===== -->
+    <div class="figures">
+      <figure>
+        <div class="frame fit">
+          <img src="../images/tl_state.jpg" width="944" height="352"
+               alt="State diagram with four states in a loop: 00 main green/cross red, 01 main yellow, 10 main red/cross green, 11 cross yellow. A button press moves 00 to 01; the other transitions happen every 4 seconds.">
+        </div>
+        <figcaption>State diagram: the button press starts the 4-state cycle.</figcaption>
+      </figure>
+      <figure>
+        <div class="frame">
+          <img src="../images/tl_circuit.jpg" width="1000" height="750"
+               alt="Breadboard densely wired with logic gate chips, flip-flops, and a 555 timer, with red, yellow, and green LEDs lit.">
+        </div>
+        <figcaption>The finished controller: gates, flip-flops, and a 555 clock.</figcaption>
+      </figure>
+    </div>
+
+    <!-- ===== 5. Body: What I did (left) / My role, Debugging, Takeaway (right) ===== -->
+    <div class="body">
+      <section>
+        <h2 class="label">What I did</h2>
+        <ul>
+          <li>Designed it in the pre-lab: the state diagram, the excitation equations, and 555 timing values (1&nbsp;kΩ, 28&nbsp;kΩ, 100&nbsp;µF).</li>
+          <li>Built it from logic gates, flip-flops, and a 555 astable clock, and added a switch as the crosswalk button.</li>
+          <li>When it cycled through only two states, we checked wiring and power, then found and fixed a missing connection.</li>
+        </ul>
+      </section>
+      <div>
+        <section>
+          <h2 class="label">My role</h2>
+          <p>Team of two. Pre-lab design, build, and root-cause reasoning.</p>
+        </section>
+        <section>
+          <h2 class="label">Debugging</h2>
+          <p>It still failed, until my partner's logic probe on the 555 output made it work. I reasoned the probe was supplying a missing ground. A new 555 fixed it; the old one had a bent ground pin.</p>
+        </section>
+        <section>
+          <h2 class="label">Takeaway</h2>
+          <p>A strange symptom is a clue: ask what changed and why.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>Jerett De Guzman · Engineering Portfolio</span>
+    <a href="../index.html#projects">← All projects</a>
+  </footer>
+
+</div>
+</body>
+</html>

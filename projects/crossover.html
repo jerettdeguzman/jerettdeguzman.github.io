@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Three-Way Passive Crossover Network — Jerett De Guzman</title>
+  <meta name="description" content="Individual simulation project: a critically damped three-way passive crossover at 100 Hz and 2.5 kHz, designed with nodal analysis and verified in MATLAB and LTspice.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== Site header: same on every page (paths start with ../ because this file is in projects/) ===== -->
+  <header class="site-header">
+    <a class="site-name" href="../index.html">Jerett De Guzman</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../experience.html">Experience</a>
+      <a href="../resume.pdf">Résumé</a>
+      <a href="mailto:jerettdg@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/jerett-de-guzman">LinkedIn</a>
+      <a href="https://github.com/jerettdeguzman">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== 1. Kicker strip ===== -->
+    <div class="kicker">
+      <span class="kicker-left">Project · Filter Design &amp; Simulation</span>
+      <span class="kicker-right">Spring 2026 · Principles of EE II</span>
+    </div>
+
+    <!-- ===== 2. Title + challenge ===== -->
+    <h1>Three-Way Passive Crossover Network</h1>
+    <p class="challenge">Split audio between a woofer, midrange, and tweeter at 100&nbsp;Hz and 2.5&nbsp;kHz, using only inductors and capacitors, since speakers can draw over 100&nbsp;W.</p>
+
+    <!-- ===== 3. Four metric boxes ===== -->
+    <ul class="metrics">
+      <li><span class="metric-value">100 Hz · 2.5 kHz</span><span class="metric-label">crossover points</span></li>
+      <li><span class="metric-value">α = ω₀</span><span class="metric-label">critically damped, 8&nbsp;Ω</span></li>
+      <li><span class="metric-value">±0.2 V</span><span class="metric-label">flat-response spec met</span></li>
+      <li><span class="metric-value">Individual</span><span class="metric-label">design + simulation</span></li>
+    </ul>
+
+    <!-- ===== 4. Two captioned images. Add class="fit" to a frame for diagrams so nothing is cropped. ===== -->
+    <div class="figures">
+      <figure>
+        <div class="frame fit">
+          <img src="../images/xo_schematic.jpg" width="1000" height="818"
+               alt="LTspice schematic of the full crossover: a low-pass woofer branch, a band-pass midrange branch, and a high-pass tweeter branch, each driving an 8 Ω load, with inductor values 25.46 mH and 1.018 mH and capacitor values 99.47 µF and 3.978 µF.">
+        </div>
+        <figcaption>Full network in LTspice with final L and C values.</figcaption>
+      </figure>
+      <figure>
+        <div class="frame fit">
+          <img src="../images/xo_combined.jpg" width="1000" height="492"
+               alt="LTspice plot from 10 Hz to 100 kHz of the summed magnitude of all three outputs. The vertical axis spans only 0.99 to 1.12 V; the sum sits at 1.00 V at both ends and rises to a single hump near 1 kHz.">
+        </div>
+        <figcaption>Sum of all three outputs stays near 1 V across the band.</figcaption>
+      </figure>
+    </div>
+
+    <!-- ===== 5. Body: What I did (left) / My role, Result, What I'd fix (right) ===== -->
+    <div class="body">
+      <section>
+        <h2 class="label">What I did</h2>
+        <ul>
+          <li>Derived each filter's transfer function with nodal analysis, solving the bandpass section in MATLAB.</li>
+          <li>Chose critical damping, so each filter is exactly half amplitude at the crossover and neighbors sum to a flat 1&nbsp;V.</li>
+          <li>Checked every section with MATLAB Bode plots, then simulated the full network in LTspice.</li>
+        </ul>
+      </section>
+      <div>
+        <section>
+          <h2 class="label">My role</h2>
+          <p>Individual project. Design and simulation only; no hardware was built.</p>
+        </section>
+        <section>
+          <h2 class="label">Result</h2>
+          <p>Woofer and tweeter landed within 1% of target, and the combined output read 1.00&nbsp;V and 1.02&nbsp;V at the crossovers.</p>
+        </section>
+        <section>
+          <h2 class="label">What I'd fix</h2>
+          <p>The midrange's upper crossover came out about 4% high, inside the 5% allowance, because its two halves load each other. One component tweak would correct it.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>Jerett De Guzman · Engineering Portfolio</span>
+    <a href="../index.html#projects">← All projects</a>
+  </footer>
+
+</div>
+</body>
+</html>

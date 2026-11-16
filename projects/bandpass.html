@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Two-Stage Active Bandpass Filter — Jerett De Guzman</title>
+  <meta name="description" content="Cascaded op-amp bandpass filter (Q = 15.55) that pulls one Morse code message at 351 Hz out of twelve sharing the same wires.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== Site header: same on every page (paths start with ../ because this file is in projects/) ===== -->
+  <header class="site-header">
+    <a class="site-name" href="../index.html">Jerett De Guzman</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../experience.html">Experience</a>
+      <a href="../resume.pdf">Résumé</a>
+      <a href="mailto:jerettdg@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/jerett-de-guzman">LinkedIn</a>
+      <a href="https://github.com/jerettdeguzman">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== 1. Kicker strip ===== -->
+    <div class="kicker">
+      <span class="kicker-left">Project · Analog Signal Processing</span>
+      <span class="kicker-right">Spring 2026 · Principles of EE II Lab</span>
+    </div>
+
+    <!-- ===== 2. Title + challenge ===== -->
+    <h1>Two-Stage Active Bandpass Filter</h1>
+    <p class="challenge">Twelve Morse code messages share one pair of wires, each on its own frequency. Pull out the message at 351&nbsp;Hz.</p>
+
+    <!-- ===== 3. Four metric boxes ===== -->
+    <ul class="metrics">
+      <li><span class="metric-value">351 Hz</span><span class="metric-label">target frequency</span></li>
+      <li><span class="metric-value">Q = 15.55</span><span class="metric-label">up from 6, then 10</span></li>
+      <li><span class="metric-value">2 stages</span><span class="metric-label">cascaded op-amp filters</span></li>
+      <li><span class="metric-value">"RLC"</span><span class="metric-label">message decoded</span></li>
+    </ul>
+
+    <!-- ===== 4. Two captioned images. Add class="fit" to a frame for diagrams so nothing is cropped. ===== -->
+    <div class="figures">
+      <figure>
+        <div class="frame fit">
+          <img src="../images/bp_ltspice.jpg" width="1000" height="479"
+               alt="LTspice schematic of two identical cascaded LM741 bandpass stages, each with 220 kΩ, 910 kΩ, and 2.2 kΩ resistors and two 10 nF capacitors, labeled Q = 15.55.">
+        </div>
+        <figcaption>Final LTspice design: two identical stages, Q = 15.55.</figcaption>
+      </figure>
+      <figure>
+        <div class="frame">
+          <img src="../images/bp_morse.jpg" width="1000" height="750"
+               alt="Oscilloscope screen showing a noisy raw signal in yellow and, below it, the filtered signal in green as distinct bursts of dots and dashes.">
+        </div>
+        <figcaption>Raw signal (yellow) and filtered Morse code (green).</figcaption>
+      </figure>
+    </div>
+
+    <!-- ===== 5. Body: What I did (left) / My role, Debugging, Takeaway (right) ===== -->
+    <div class="body">
+      <section>
+        <h2 class="label">What I did</h2>
+        <ul>
+          <li>More Q from one stage would have needed resistors over 1&nbsp;MΩ and risked ringing, so we cascaded two Q&nbsp;=&nbsp;10 stages.</li>
+          <li>Cascading shrank the bandwidth to 64.3% of one stage (35.1&nbsp;Hz to 22.6&nbsp;Hz), for a combined Q of 15.55.</li>
+          <li>Simulated in LTspice first: the peak landed at 354.9&nbsp;Hz and 12.4&nbsp;dB, matching two gain-of-2 stages.</li>
+        </ul>
+      </section>
+      <div>
+        <section>
+          <h2 class="label">My role</h2>
+          <p>Team of two. Filter design math, simulation, bench build, and scope measurements.</p>
+        </section>
+        <section>
+          <h2 class="label">Debugging</h2>
+          <p>Found a part wired to the op-amp's negative supply pin instead of its inverting input, then tuned the scope timebase until the dots and dashes were readable.</p>
+        </section>
+        <section>
+          <h2 class="label">Takeaway</h2>
+          <p>Simulate before you build, and check pinouts first when hardware disagrees.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>Jerett De Guzman · Engineering Portfolio</span>
+    <a href="../index.html#projects">← All projects</a>
+  </footer>
+
+</div>
+</body>
+</html>
