@@ -1,0 +1,209 @@
+/* =====================================================================
+   Jerett De Guzman — portfolio stylesheet
+   One file for the whole site. Every color and font lives in :root
+   below, so changing a color is a one-line edit.
+   ===================================================================== */
+
+/* ---------- 1. Design tokens (from the printed portfolio) ---------- */
+:root {
+  --accent:         #1F4A7A;  /* section labels, metric values, links, kicker */
+  --accent-hover:   #16365A;  /* link hover */
+  --text:           #16181D;  /* body text, headings, heavy rules */
+  --text-secondary: #33373F;  /* challenge statements, subtitles */
+  --text-muted:     #4A4F59;  /* captions, metric labels, right-hand strip text */
+  --border:         #C9CDD4;  /* metric boxes, image frames, footer rule */
+  --background:     #FFFFFF;
+
+  --font-sans: 'IBM Plex Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+  --max-width: 880px;   /* content column width on desktop */
+  --gutter: 24px;       /* space between columns and at the page edges */
+}
+
+/* ---------- 2. Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }  /* width includes padding + border */
+
+html { -webkit-text-size-adjust: 100%; }  /* stop phones from auto-enlarging text */
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+img { display: block; max-width: 100%; height: auto; }  /* images never overflow their box */
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:hover { color: var(--accent-hover); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }  /* keyboard users */
+
+/* Centers the content and caps its width. Every page wraps its content in this. */
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* ---------- 3. Site header (name, nav, contact) ---------- */
+.site-header {
+  display: flex;
+  flex-wrap: wrap;               /* nav drops below the name when space runs out */
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px 24px;
+  padding: 20px 0 14px;
+  border-bottom: 1px solid var(--border);
+}
+.site-name {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+  text-decoration: none;
+}
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.site-nav a { text-decoration: none; }
+.site-nav a:hover { text-decoration: underline; }
+
+/* ---------- 4. Kicker strip (top of each project page) ---------- */
+.kicker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 24px;
+  margin-top: 40px;
+  padding-bottom: 8px;
+  border-bottom: 1.5px solid var(--text);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.kicker-left  { font-weight: 600; color: var(--accent); }
+.kicker-right { color: var(--text-muted); }
+
+/* ---------- 5. Title + challenge statement ---------- */
+h1 {
+  margin: 28px 0 8px;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+.challenge {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+/* ---------- 6. Metric boxes: 4 across (2x2 on phones, see section 10) ---------- */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  /* four equal columns */
+  gap: 12px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.metrics li {
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+}
+.metric-value {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--accent);
+}
+.metric-label {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ---------- 7. Two captioned images side by side ---------- */
+.figures {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 24px;
+}
+.figures figure { margin: 0; }
+.frame {
+  aspect-ratio: 4 / 3;            /* both frames the same shape, like the printed page */
+  border: 1px solid var(--border);
+  background: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.frame img { width: 100%; height: 100%; object-fit: cover; }  /* photos fill the frame */
+.frame.fit img { object-fit: contain; }  /* diagrams: show all of it, white space around */
+figcaption {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ---------- 8. Body: "What I did" left, role/result/takeaway right ---------- */
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gutter);
+  margin-top: 28px;
+}
+.label {                           /* "What I did", "My role", "Result", ... */
+  margin: 0 0 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+.body ul { margin: 0; padding-left: 20px; }
+.body li { margin-bottom: 10px; }
+.body p  { margin: 0; }
+.body section + section { margin-top: 18px; }  /* space between stacked right-column blocks */
+
+/* ---------- 9. Footer strip ---------- */
+.site-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 24px;
+  margin-top: 64px;
+  padding: 10px 0 32px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.site-footer a { color: var(--text-muted); }
+.site-footer a:hover { color: var(--accent-hover); }
+
+/* ---------- 10. Phones and narrow windows ----------
+   Below 700px there isn't room for side-by-side columns, so:
+   metric boxes go 2x2, and images and body columns stack. */
+@media (max-width: 700px) {
+  :root { --gutter: 16px; }
+  .kicker { margin-top: 28px; }
+  h1 { font-size: 28px; }
+  .metrics { grid-template-columns: repeat(2, 1fr); }
+  .figures, .body { grid-template-columns: 1fr; }
+}
