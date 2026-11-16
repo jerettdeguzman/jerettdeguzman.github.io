@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Three-Way Passive Crossover Network — Jerett De Guzman</title>
   <meta name="description" content="Individual simulation project: a critically damped three-way passive crossover at 100 Hz and 2.5 kHz, designed with nodal analysis and verified in MATLAB and LTspice.">
+  <!-- Link preview (what LinkedIn, email, and Slack show when this URL is pasted) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Three-Way Passive Crossover Network — Jerett De Guzman">
+  <meta property="og:description" content="Individual simulation project: a critically damped three-way passive crossover at 100 Hz and 2.5 kHz, designed with nodal analysis and verified in MATLAB and LTspice.">
+  <meta property="og:url" content="https://jerettdeguzman.github.io/projects/crossover.html">
+  <meta property="og:image" content="https://jerettdeguzman.github.io/images/xo_combined.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%231F4A7A%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27Helvetica,Arial,sans-serif%27 font-size=%2716%27 font-weight=%27700%27 fill=%27white%27 text-anchor=%27middle%27%3EJD%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -58,7 +66,7 @@
       <figure>
         <div class="frame fit">
           <img src="../images/xo_combined.jpg" width="1000" height="492"
-               alt="LTspice plot from 10 Hz to 100 kHz of the summed magnitude of all three outputs. The vertical axis spans only 0.99 to 1.12 V; the sum sits at 1.00 V at both ends and rises to a single hump near 1 kHz.">
+               alt="LTspice plot from 10 Hz to 100 kHz of the summed magnitude of all three outputs. The vertical axis spans only 0.99 to 1.12 V; the sum sits at 1.00 V at both ends and rises to a single hump between 100 Hz and 1 kHz, peaking near 1.11 V.">
         </div>
         <figcaption>Sum of all three outputs stays near 1 V across the band.</figcaption>
       </figure>
