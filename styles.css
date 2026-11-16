@@ -108,6 +108,23 @@ h1 {
   color: var(--text-secondary);
 }
 
+/* Tools line under the challenge: "TOOLS  MATLAB · LTspice · ..." */
+.tools {
+  margin: 10px 0 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+.tools-label {
+  margin-right: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+.entry .tools { margin: -4px 0 14px; }  /* on the Experience page, sits under the role line */
+
 /* ---------- 6. Metric boxes: 4 across (2x2 on phones, see section 10) ---------- */
 .metrics {
   display: grid;
