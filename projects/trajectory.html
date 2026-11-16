@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Autonomous Mobile Robot Trajectory Design — Jerett De Guzman</title>
+  <meta name="description" content="Trajectory design for a mobile robot: a 53.3 m collision-free route through four sensing stops, built from step and ramp signals, inside a battery-limited 300 s mission.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== Site header: same on every page (paths start with ../ because this file is in projects/) ===== -->
+  <header class="site-header">
+    <a class="site-name" href="../index.html">Jerett De Guzman</a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../index.html#projects">Projects</a>
+      <a href="../experience.html">Experience</a>
+      <a href="../resume.pdf">Résumé</a>
+      <a href="mailto:jerettdg@gmail.com">Email</a>
+      <a href="https://www.linkedin.com/in/jerett-de-guzman">LinkedIn</a>
+      <a href="https://github.com/jerettdeguzman">GitHub</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== 1. Kicker strip ===== -->
+    <div class="kicker">
+      <span class="kicker-left">Project · Trajectory &amp; Motion Planning</span>
+      <span class="kicker-right">Fall 2026 · Linear Systems &amp; Signals (ECE 345)</span>
+    </div>
+
+    <!-- ===== 2. Title + challenge ===== -->
+    <h1>Autonomous Mobile Robot Trajectory Design</h1>
+    <p class="challenge">Plan a mobile robot's route across a factory floor: stop at four sensing points, clear every obstacle, and reach the end before the battery drops below 60% charge.</p>
+
+    <!-- ===== 3. Four metric boxes ===== -->
+    <ul class="metrics">
+      <li><span class="metric-value">53.3 m</span><span class="metric-label">route, 12% under budget</span></li>
+      <li><span class="metric-value">1.8×</span><span class="metric-label">required clearance</span></li>
+      <li><span class="metric-value">296 s</span><span class="metric-label">mission, 300.5&nbsp;s ceiling</span></li>
+      <li><span class="metric-value">0.6046</span><span class="metric-label">final charge, 0.60 floor</span></li>
+    </ul>
+
+    <!-- ===== 4. Two captioned images. Add class="fit" to a frame for diagrams so nothing is cropped. ===== -->
+    <div class="figures">
+      <figure>
+        <div class="frame fit">
+          <img src="../images/tr_path.png" width="1254" height="702"
+               alt="Factory map, 40 by 20 meters, with rectangular and circular obstacles. A blue path runs from start point A at (2, 2) up to stop M1, diagonally up to M2, down to M3, up to M4, and on to end point B at (38, 18), passing between the obstacles.">
+        </div>
+        <figcaption>The final 53.3 m route from A to B through four monitoring stops.</figcaption>
+      </figure>
+      <figure>
+        <div class="frame fit">
+          <img src="../images/tr_ramp.png" width="1249" height="846"
+               alt="Plot of x(t) and y(t) from 0 to 296 seconds. Both signals are staircases of sloped ramps and flat holds: x climbs from 2 to 38 meters and y moves between 2 and 16 before ending at 18.">
+        </div>
+        <figcaption>x(t) and y(t) built from steps and ramps: each slope is a move, each flat is a 60&nbsp;s stop.</figcaption>
+      </figure>
+    </div>
+
+    <!-- ===== 5. Body: What I did (left) / My role, Result, Takeaway (right) ===== -->
+    <div class="body">
+      <section>
+        <h2 class="label">What I did</h2>
+        <ul>
+          <li>Derived a 300.485&nbsp;s mission ceiling from the battery-discharge model. After four 60&nbsp;s sensing stops, that left a 60.485&nbsp;m path budget at 1&nbsp;m/s.</li>
+          <li>My first route ran 71.89&nbsp;m, 19% over, because zigzagging between stops forced detours around three rectangles. I redesigned it to 53.321&nbsp;m, with 12% to spare.</li>
+          <li>Built x(t) and y(t) from steps and ramps: each move is one ramp pair, and the robot holds still through each stop.</li>
+        </ul>
+      </section>
+      <div>
+        <section>
+          <h2 class="label">My role</h2>
+          <p>Team of three. I owned Part 1, the trajectory design. My teammates did the sensor model and the sonar processing.</p>
+        </section>
+        <section>
+          <h2 class="label">Result</h2>
+          <p>Checked collisions by inflating each obstacle by the 0.40&nbsp;m robot radius and testing only the center path, sampled every 0.01&nbsp;s. The tightest point, the corner at (7,&nbsp;10), cleared by 0.707&nbsp;m, 1.8× the requirement. The mission ends at 296&nbsp;s with a final charge of 0.6046, above the 0.60 floor.</p>
+        </section>
+        <section>
+          <h2 class="label">Takeaway</h2>
+          <p>Work out the budget before the route. The numbers killed my first design before I drew a second one.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <span>Jerett De Guzman · Engineering Portfolio</span>
+    <a href="../index.html#projects">← All projects</a>
+  </footer>
+
+</div>
+</body>
+</html>
