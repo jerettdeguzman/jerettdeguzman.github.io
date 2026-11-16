@@ -1,0 +1,27 @@
+# This repo is PUBLIC. Keep private material out.
+
+# Source documents (these live in ../reference, outside the repo — this is a backstop)
+reference/
+*.tex
+*.docx
+*.doc
+*.xlsx
+
+# Anything that looks like personal paperwork
+*transcript*
+*Transcript*
+*W-2*
+*W2*
+*lab_report*
+*Lab_Report*
+*notebook*
+*Notebook*
+
+# Editor / OS clutter
+.vscode/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Python preview server leftovers
+__pycache__/
